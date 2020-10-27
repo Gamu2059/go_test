@@ -1,4 +1,4 @@
-module github.com/labstack/echo/v4
+module BRSystemBG
 
 go 1.15
 
