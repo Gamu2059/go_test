@@ -2,6 +2,7 @@ package main
 
 import (
 	"net/http"
+	"os"
 
 	"github.com/labstack/echo"
 )
@@ -9,7 +10,7 @@ import (
 func main() {
 	e := echo.New()
 	e.GET("/hello", handle)
-	i := e.Start(":1223")
+	i := e.Start(":" + os.Getenv("PORT"))
 	e.Logger.Fatal(i)
 }
 
