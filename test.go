@@ -6,10 +6,13 @@ import (
 	"github.com/labstack/echo"
 )
 
-func main()  {
+func main() {
 	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
-	})
-	e.Logger.Fatal(e.Start(":1223"))
+	e.GET("/hello", handle)
+	i := e.Start(":1223")
+	e.Logger.Fatal(i)
+}
+
+func handle(c echo.Context) error {
+	return c.String(http.StatusOK, "Hello, World!")
 }
