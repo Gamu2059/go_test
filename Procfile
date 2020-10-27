@@ -1,1 +1,1 @@
-web: bin/BRSystemBG
+web: bin/test
